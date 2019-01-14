@@ -1,11 +1,5 @@
-const shortid = require('shortid');
+const chatRoom = new chatRoom();
 
-class Store {
-  constructor(rootDir) {
-    this.rootDir = rootDir;
-  }
-
-  create(obj, callback) {
-    const id = shortid.generate();
-  }
+createServer(7890, client => {
+  client.on('data', data => )
 }
