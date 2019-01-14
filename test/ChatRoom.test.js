@@ -1,6 +1,7 @@
 const ChatRoom = require('../lib/ChatRoom');
 
 describe('ChatRoom', () => {
+
   it('can add a client', () => {
     // const client {}
     const client = {};
@@ -11,7 +12,13 @@ describe('ChatRoom', () => {
     expect(client.username).toBeDefined();
   });
   
-  
+  it('gets the client with said username', () => {
+    const client = {};
+    const chatroom = new ChatRoom();
+    const username = chatroom.add(client);
+    const gotClient = chatroom.getClient(username);
+    expect(gotClient).toEqual(client);
+  });
 
 });
 
