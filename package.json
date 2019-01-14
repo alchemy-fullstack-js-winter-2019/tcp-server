@@ -1,0 +1,24 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stream.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paigeegorry/tcp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paigeegorry/tcp-server/issues"
+  },
+  "homepage": "https://github.com/paigeegorry/tcp-server#readme",
+  "devDependencies": {
+    "eslint": "^5.12.0"
+  }
+}
