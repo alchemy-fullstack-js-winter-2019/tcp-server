@@ -11,7 +11,7 @@ describe('ChatRoom', () => {
   it('takes a socket, assigns random username, and stores by user name', () => {
     const client = {};
     chatroom.add(client);
-    // expect(client.username).toEqual(expect.any(String));
+    expect(client.username).toEqual(expect.any(String));
     expect(client.username).toBeDefined();
   });
 
