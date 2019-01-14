@@ -1,0 +1,21 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "main": "stream.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connorfrendt/tcp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connorfrendt/tcp-server/issues"
+  },
+  "homepage": "https://github.com/connorfrendt/tcp-server#readme",
+  "description": ""
+}
