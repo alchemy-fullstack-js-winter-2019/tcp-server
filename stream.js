@@ -9,12 +9,12 @@ stream.on('end', () => console.log('DONE!!!!!'));
 
 const writeStream = createWriteStream('./test.text');
 
-writeStream.write('hello!!!'), err => console.log(err));
+writeStream.write('hello!!!'), err => console.log(err);
 
 // Copy with Chunks
-const { createReadStream, createWriteStream } = require('fs');
+// const { createReadStream, createWriteStream } = require('fs');
 
-const stream = createReadStream('./LAB.md', { encoding: 'utf8' });
+// const stream = createReadStream('./LAB.md', { encoding: 'utf8' });
 const writeStream = createWriteStream('./LAB-copy.md');
 
 stream.on('data', data => {
