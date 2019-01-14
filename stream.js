@@ -2,8 +2,8 @@
 const { 
   createReadStream,
   createWriteStream
-} = require('fs'); // Destructure 
-
+} = require('fs'); // Destructure with {}
+const createServer = require('net');
 
 // Create a new stream and encode to string
 const readStream = createReadStream('./LAB.md', { encoding: 'utf8' });
@@ -27,4 +27,14 @@ readStream.on('data', data => {
   writeStream.write(data, err => {
     console.error(err);
   })
-})
+});
+
+const server = createServer(client => {
+  console.log('Client Connected');
+)};
+
+server.listen(7890, () => console.log('listening on 7890'));
+
+// readStream.pipe(writeStream);
+// standard out process(keyword for going to the operating system) prints to terminal
+// readStream.pipe(process.stdout);
