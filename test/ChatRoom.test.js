@@ -8,19 +8,23 @@ describe('ChatRoom', () => {
     chatroom = new ChatRoom();
   });
 
-  it('takes a socket, assigns random username, and stores by user name', () => {
-    const client = {};
-    chatroom.add(client);
-    expect(client.username).toEqual(expect.any(String));
-    expect(client.username).toBeDefined();
-  });
-  it('returned object is the same', () => {
-    const client = {};
-    chatroom.add(client);
-    const foundUser = chatroom.getClient(client.username);
-    expect(foundUser.username).toEqual(client.username);
+  describe('add method', () => {
+    it('takes a socket, assigns random username, and stores by user name', () => {
+      const client = {};
+      chatroom.add(client);
+      expect(client.username).toEqual(expect.any(String));
+      expect(client.username).toBeDefined();
+    });
   });
 
-  
+  describe('getClient method', () => {
+    it('returned object is the same', () => {
+      const client = {};
+      chatroom.add(client);
+      const foundUser = chatroom.getClient(client.username);
+      expect(foundUser.username).toEqual(client.username);
+    });
+  });
+
 
 });
