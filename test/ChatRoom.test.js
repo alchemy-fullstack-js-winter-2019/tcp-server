@@ -1,3 +1,4 @@
+const ChatRoom = require('../lib/ChatRoom');
 
 describe('ChatRoom', () => {
 
@@ -5,18 +6,19 @@ describe('ChatRoom', () => {
   const c2 = {};
   const c3 = {};
 
-  let clients = null;
+  let chatRoom = null;
 
   beforeEach(() => {
-    clients = new Clients();
-    chatroom.add(c1);
-    chatroom.add(c2);
-    chatroom.add(c3);
+    chatRoom = new ChatRoom();
+    chatRoom.add(c1);
+    chatRoom.add(c2);
+    chatRoom.add(c3);
   });
 
   it('assigns random user name', () => {
-    expect(c1.username).toEqual('username1');
-    expect(c2.username).toEqual('username2');
-    expect(c3.username).toEqual('username3');
+    expect(c1.username).toEqual('user1');
+    expect(c2.username).toEqual('user2');
+    console.log('!!!!', c2);
+    expect(c3.username).toEqual('user3');
   });
 });
