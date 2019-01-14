@@ -1,7 +1,7 @@
 const { createServer } = require('net');
 
 const server = createServer(client => {
-  client.on('data', data => console.log(`ECHO: ${data}`));
+  client.on('data', data => console.log(`client: ${data}`));
   
   console.log('client connected');
 });
