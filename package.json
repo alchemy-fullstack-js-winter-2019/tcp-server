@@ -1,0 +1,27 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "main": "stream.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "eslint .",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/averagegalmarcy/tcp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/averagegalmarcy/tcp-server/issues"
+  },
+  "homepage": "https://github.com/averagegalmarcy/tcp-server#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "jest": "^23.6.0"
+  }
+}
