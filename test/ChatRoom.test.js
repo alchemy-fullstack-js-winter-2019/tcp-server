@@ -14,6 +14,7 @@ describe('ChatRoom', () => {
       chatroom.add(client);
       expect(client.username).toEqual(expect.any(String));
       expect(client.username).toBeDefined();
+      expect(client).toEqual({ username: client.username });
     });
   });
 
@@ -26,5 +27,8 @@ describe('ChatRoom', () => {
     });
   });
 
+  describe('rename method', () => {
+    
+  });
 
 });
