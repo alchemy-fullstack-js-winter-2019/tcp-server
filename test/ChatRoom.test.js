@@ -21,4 +21,9 @@ describe('ChatRoom', () => {
     expect(response).toEqual(client1);
   });
 
+  it('renames a username to a new name', () => {
+    const response = clients.rename(client1, 'Aragorn');
+    expect(response.username).toEqual('Aragorn');
+  });
+
 });
