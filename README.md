@@ -1,3 +1,10 @@
+## Information
+
+This repo contains the code needed to run a simple TCP server which allows for communication 'chat room' between clients. 
+
+
+
+
 ## Project setup
 ```
 npm install
