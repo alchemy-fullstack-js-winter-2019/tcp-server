@@ -12,27 +12,42 @@ describe('ChatRoom', () => {
     clients.add(client2);
   });
 
-  it('takes a socket, assigns a random user name, and stores by user name', () => {
-    console.log(client1);
-    expect(client1.username).toEqual('user1');
+  it('takes a socket, assigns a random user name, and stores by user name', (done) => {
+    const client3 = {};
+    clients.add(client3);
+    expect(client3.username).toEqual('user3');
+    expect(client3).toBeDefined();
+    done();
   });
 
-  it('takes a username and returns that object', () => {
-    const response = clients.get(client1.username);
+  it('takes a username and returns that object', (done) => {
+    const response = clients.getClient(client1.username);
     expect(response).toEqual(client1);
+    done();
   });
 
-  it('renames a username to a new name', () => {
-    const response = clients.rename(client1, 'Aragorn');
-    expect(response.username).toEqual('Aragorn');
+  it('renames a username to a new name', (done) => {
+    clients.rename(client1, 'Aragorn');
+    expect(client1.username).toEqual('Aragorn');
+    // expect(clients.getClient('user')).toBeFalsy();
+    done();
   });
 
-  it('can get all clients', () => {
+  it('can not rename to existing user name', (done) => {
+    const response = clients.rename(client2, 'user1');
+    console.log('response', response);
+    expect(response).toBeFalsy();
+    done();
+  });
+
+
+  it('can get all clients', (done) => {
     const all = clients.all();
     const expected = [
       { username: 'user1' },
       { username: 'user2' }];
     expect(all).toEqual(expected);
+    done();
   });
 
 });
