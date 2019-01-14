@@ -2,9 +2,16 @@ const ChatRoom  = require('../lib/chatroom');
 
 describe('ChatRoom', () => {
   let chatroom = null;
+  const c1 = {};
+  const c2 = {};
+  const c3 = {};
 
   beforeEach(() => {
     chatroom = new ChatRoom();
+    chatroom.add(c1);
+    chatroom.add(c2);
+    chatroom.add(c3);
+
   });
 
   it('can add a client', () => {
@@ -13,5 +20,14 @@ describe('ChatRoom', () => {
     expect(client.username).toBeDefined();
   });
 
-  
+  it('the username is the same', () => {
+    const foundClient = chatroom.getClient(c1.username);
+
+    expect(foundClient).toEqual({ username: expect.any(String) });
+  });
+  it('renames a username', () => {
+    const renamedUser = chatroom.rename(c1.username, 'dog');
+
+    expect(renamedUser.username).toEqual('banana');
+  });
 });
