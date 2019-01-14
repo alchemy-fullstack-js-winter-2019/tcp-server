@@ -8,7 +8,11 @@ stream.on('data', data => {
   writeStream.write(data, err => console.log(err));
 });
 
+stream.on('end', stream.end);
 
 stream.on('error', err => console.log(err));
 
 stream.on('end', () => console.log('Done'));
+
+
+
