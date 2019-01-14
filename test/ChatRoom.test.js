@@ -4,11 +4,12 @@ describe('ChatRoom', () => {
 
   let clients = null;
   const client1 = {};
-  // const client2 = {};
+  const client2 = {};
 
   beforeEach(() => {
     clients = new ChatRoom();
     clients.add(client1);
+    clients.add(client2);
   });
 
   it('takes a socket, assigns a random user name, and stores by user name', () => {
@@ -24,6 +25,14 @@ describe('ChatRoom', () => {
   it('renames a username to a new name', () => {
     const response = clients.rename(client1, 'Aragorn');
     expect(response.username).toEqual('Aragorn');
+  });
+
+  it('can get all clients', () => {
+    const all = clients.all();
+    const expected = [
+      { username: 'user1' },
+      { username: 'user2' }];
+    expect(all).toEqual(expected);
   });
 
 });
