@@ -1,11 +1,11 @@
-const { createReadStream, createWriteStream } = require('fs');
+// const { createReadStream, createWriteStream } = require('fs');
 
-const stream = createReadStream('./LAB.md', { encoding: 'utf8' });
-const writeStream = createWriteStream('./LAB-copy.txt');
+// const stream = createReadStream('./LAB.md', { encoding: 'utf8' });
+// const writeStream = createWriteStream('./LAB-copy.txt');
 
-stream.pipe(writeStream);
-stream.pipe(process.stdout);
-stream.pipe(process.stdin);
+// stream.pipe(writeStream);
+// stream.pipe(process.stdout);
+// stream.pipe(process.stdin);
 
 
 
