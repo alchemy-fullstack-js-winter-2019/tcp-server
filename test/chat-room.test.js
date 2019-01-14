@@ -25,7 +25,7 @@ describe('ChatRoom', () => {
       const client = {};
       newChat.add(client);
       newChat.renameClient(client.username, 'kater');
-      expect(client.username).toEqual('kater');
+      expect(client.username).toEqual();
     });
   });
 
