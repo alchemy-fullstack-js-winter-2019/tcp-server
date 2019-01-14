@@ -26,4 +26,8 @@ describe('ChatRoom', () => {
   it('passes in the username returned from the add call and asserts the object is the same as what you supplied to the add call', done => {
   
   });
+
+  it('can not rename to existing user name', (username) => {
+    
+  })
 });
