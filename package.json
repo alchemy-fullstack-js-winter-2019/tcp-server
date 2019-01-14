@@ -1,0 +1,29 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pickuppatterns/tcp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pickuppatterns/tcp-server/issues"
+  },
+  "homepage": "https://github.com/pickuppatterns/tcp-server#readme"
+}
