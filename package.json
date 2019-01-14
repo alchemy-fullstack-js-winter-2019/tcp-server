@@ -17,5 +17,8 @@
     "url": "https://github.com/connorfrendt/tcp-server/issues"
   },
   "homepage": "https://github.com/connorfrendt/tcp-server#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "shortid": "^2.2.14"
+  }
 }
