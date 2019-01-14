@@ -23,6 +23,7 @@
   "homepage": "https://github.com/caripizza/tcp-server#readme",
   "devDependencies": {
     "eslint": "^5.12.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "shortid": "^2.2.14"
   }
 }

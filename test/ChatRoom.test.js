@@ -1,9 +1,22 @@
 const ChatRoom = require('../lib/ChatRoom');
 
 describe('ChatRoom', () => {
-  it('takes a socket, assigns random user name, and stores by user name', () => {
-    const chatroom = new ChatRoom();
-    const client = chatroom.add('Joe');
-    expect(client.username).toEqual('Joe');
+
+  let chatroom = null;
+
+  beforeEach(() => {
+    chatroom = new ChatRoom();
   });
+
+  it('takes a socket, assigns random username, and stores by user name', () => {
+    const client = {};
+    chatroom.add(client);
+    // expect(client.username).toEqual(expect.any(String));
+    expect(client.username).toBeDefined();
+  });
+
+
+
+  // it('', () => {});
+
 });
