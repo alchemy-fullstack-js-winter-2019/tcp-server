@@ -14,9 +14,13 @@ describe('ChatRoom', () => {
     expect(client.username).toEqual(expect.any(String));
     expect(client.username).toBeDefined();
   });
+  it('returned object is the same', () => {
+    const client = {};
+    chatroom.add(client);
+    const foundUser = chatroom.getClient(client.username);
+    expect(foundUser.username).toEqual(client.username);
+  });
 
-
-
-  // it('', () => {});
+  
 
 });
