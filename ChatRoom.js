@@ -1,14 +1,14 @@
 
 class ChatRoom {
   constructor() {
-    this.classList = [];
+    this.chatroom = new Map();
   }
   add(obj) {
-    obj.userName = 'USER' + this.classList.length;
-    this.classList.push(obj);
+    obj.userName = 'USER' + this.chatroom.size;
+    this.chatroom.set(obj);
   }
   getClient(userName) {
-    return this.classList[userName];
+    return this.chatroom[userName];
   }
 }
 
