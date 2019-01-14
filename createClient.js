@@ -9,7 +9,9 @@ const rl = createInterface({
 
 const client = createConnection({ port: 7890 }, () => {
   console.log('connected to server...');
+  rl.prompt();
   rl.on('line', line => {
+    rl.prompt();
     client.write(line, err => err ? err : line);
   });
 });
