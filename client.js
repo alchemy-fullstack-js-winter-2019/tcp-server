@@ -1,5 +1,5 @@
 const { createConnection } = require('net');
-const { createInterface} = require ('readline');
+const { createInterface } = require ('readline');
 
 const rl = createInterface({
   input: process.stdin,
