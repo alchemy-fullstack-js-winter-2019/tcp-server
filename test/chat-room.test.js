@@ -7,6 +7,11 @@ describe('chat room experience', () => {
   });
 
   it('add', () => {
-    expect(room.add().username).toEqual('user');
+    expect(room.add('user1').username).toEqual('user1');
+  });
+
+  it('getClient', () => {
+    const client = room.add('user1');
+    expect(room.getClient('user1')).toEqual(client);
   });
 });
