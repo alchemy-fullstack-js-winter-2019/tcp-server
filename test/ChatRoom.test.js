@@ -1,8 +1,13 @@
 const ChatRoom = require('../lib/ChatRoom');
 
 describe('chatroom tests', () => {
+  let chatroom = null;
+
+  beforeEach(() => {
+    chatroom = new ChatRoom();
+  });
+
   it('can add clients', () => {
-    const chatroom = new ChatRoom();
     const client = {};
     chatroom.add(client);
 
@@ -10,12 +15,8 @@ describe('chatroom tests', () => {
   });
 
   it('returns the user that is associated with a username', () => {
-    const chatroom = new ChatRoom();
-    
     const c1 = chatroom.add({});
-
     const returnedClient = chatroom.getClient(c1.username);
-
 
     expect(returnedClient.username).toEqual(c1.username);
   });
