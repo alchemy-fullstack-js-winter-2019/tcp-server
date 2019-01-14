@@ -30,8 +30,9 @@ describe('ChatRoom', () => {
   });
 
   it('renames a user', done => {
-    chatRoom.rename('Aaron', 'Aaron2');
-    expect(chatRoom.username).toEqual('Aaron2');
+    const client4 = {};
+    chatRoom.rename(client4.username, 'Aaron2');
+    expect(client4.username).toEqual('Aaron2');
 
     done();
   });
@@ -43,10 +44,8 @@ describe('ChatRoom', () => {
   });
 
   it('cannot rename to existing username', done => {
-    chatRoom.rename({ username: 'Aaron' }, 'bitter_breeze'), (err, cannotRename) => {
-      expect(err).toBeFalsy();
-      expect(cannotRename).toBeFalsy();
-    };
+    chatRoom.rename('Aaron', 'bitter_breeze');
+    expect().toBeFalsy();
     done();
   });
 });
