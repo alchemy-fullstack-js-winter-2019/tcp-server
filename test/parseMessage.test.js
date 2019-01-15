@@ -6,10 +6,10 @@ describe('parseMessage', () => {
   });
 
   it('parses the components out of a string', () => {
-    expect(parseMessage('@cmd:param some text')).toEqual({
+    expect(parseMessage('@cmd:parameter some text more text')).toEqual({
       command: 'cmd',
-      arg: 'param',
-      text: 'some text'
+      arg: 'parameter',
+      text: 'some text more text'
     });
   });
 
@@ -22,10 +22,10 @@ describe('parseMessage', () => {
   });
 
   it('parses the components out of an @dm message string', () => {
-    expect(parseMessage('@dm:exampleuser Hello this is a direct message')).toEqual({
+    expect(parseMessage('@dm:exampleuser Hello this is a direct message!')).toEqual({
       command: 'dm',
       arg: 'exampleuser',
-      text: 'Hello this is a direct message'
+      text: 'Hello this is a direct message!'
     });
   });
 
