@@ -15,8 +15,9 @@ describe('ChatRoom', () => {
   it('gets the client with said username', () => {
     const client = {};
     const chatroom = new ChatRoom();
-    const username = chatroom.add(client);
-    const gotClient = chatroom.getClient(username);
+    chatroom.add(client);
+
+    const gotClient = chatroom.getClient(client.username);
     expect(gotClient).toEqual(client);
   });
 
