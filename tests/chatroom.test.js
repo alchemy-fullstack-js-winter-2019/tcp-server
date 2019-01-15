@@ -23,19 +23,17 @@ describe('ChatRoom', () => {
     
   });
   
-  it('passes in the username returned from the add call and asserts the object is the same as what you supplied to the add call', done => {
-  
+  it('renames my user' () => {
+    const client = {};
+    chatroom.add((client));
+    const originalName = client.username;
+    expect(chatroom.rename(client.username, 'abel')).toBeTruthy();
+    expect(client.username).toEqual('abel');
+    expect (chatroom.getClient(originalName)).toBeFalsy();
+
   });
 
   it('can not rename to existing user name', (username) => {
 
-  })
-});
-
-describe('parseMessage', () => {
-  it('returns an object with command, arg, and text', (command, arg, text) => {
-    command: 'cmd',
-    arg: 'param',
-    text: 'some text'
   });
 });
