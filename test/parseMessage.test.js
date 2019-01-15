@@ -11,6 +11,6 @@ describe('parseMessage', () => {
       arg: 'param',
       text: 'some text'
     };
-    expect(parseMessage('@cmd:param some text').toEqual(expected));
+    expect(parseMessage('@cmd:param some text')).toEqual(expected);
   });
 });
