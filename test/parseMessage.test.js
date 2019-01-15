@@ -30,7 +30,7 @@ describe('parseMessage', () => {
   });
 
   it('is functional with the all command', () => {
-    const message = '@all hey yo';
+    const message = '@all: hey yo';
     const response = parseMessage(message);
     expect(response).toEqual({ command: 'all', arg: '', text: 'hey yo' });
   });

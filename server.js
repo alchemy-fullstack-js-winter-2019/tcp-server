@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const server = require('./lib/app');
 
 const PORT = 4562;
