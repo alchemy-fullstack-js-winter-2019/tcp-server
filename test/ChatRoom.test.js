@@ -40,7 +40,6 @@ describe('ChatRoom', () => {
     done();
   });
 
-
   it('can get all clients', (done) => {
     const all = clients.all();
     const expected = [
@@ -49,5 +48,4 @@ describe('ChatRoom', () => {
     expect(all).toEqual(expected);
     done();
   });
-
 });
