@@ -24,11 +24,25 @@ describe('ChatRoom', () => {
       const newChat = new ChatRoom();
       const client = {};
       newChat.add(client);
-      const renamedClient = newChat.renameClient(client.username, 'kater')
-      expect(renamedClient).toBeTruthy();
-      expect(newChat.getClient(client.username)).toBeFalsy();
+      const clientRenamed = newChat.renameClient(client.username, 'kater');
+      expect(clientRenamed).toBeTruthy();
+    });
+
+    it('checks for old user to be deleted', () => {
+      const newChat = new ChatRoom();
+      const client = {};
+      newChat.add(client);
+      const oldUsername = client.username;
+      newChat.renameClient(oldUsername, 'kater');
+      expect(newChat.getClient(oldUsername)).toBeFalsy();
+    });
+
+    it('checks for new client username to exist', () => {
+      const newChat = new ChatRoom();
+      const client = {};
+      newChat.add(client);
+      newChat.renameClient(client.username, 'kater');
       expect(newChat.getClient('kater')).toBeTruthy();
-      expect(client.username).toEqual(client);
     });
   });
 
