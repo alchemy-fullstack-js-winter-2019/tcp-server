@@ -9,7 +9,7 @@ describe('parseMessage', () => {
         text: 'some text'
       });
   });
-
+  // Need more tests to test multiple input scenarios
   it('returns null if strings do not start with @', () => {
     expect(parseMessage('cmd:param some text')).toBeNull();
   });
