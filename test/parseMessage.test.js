@@ -13,4 +13,16 @@ describe('parseMessage', () => {
     };
     expect(parseMessage('@cmd:param some text')).toEqual(expected);
   });
+
+  it('is functional with the dm command', () => {
+    const message = '@dm:kristin some text';
+    const response = parseMessage(message);
+    expect(response).toEqual({ command: 'dm', arg: 'kristin', text: 'some text' });
+  });
+
+  it('is functional with the nick command', () => {
+    const message = '@nick:rachel';
+    const response = parseMessage(message);
+    expect(response).toEqual({ command: 'nick', arg: 'rachel', text: '' });
+  });
 });
