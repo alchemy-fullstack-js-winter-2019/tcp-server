@@ -1,8 +1,8 @@
-const message = require('../lib/parseMessage');
+const parseMessage = require('../lib/parseMessage');
 
-describe('message', () => {
+describe('parseMessage', () => {
   it('it takes a string and returns an object based on msg contents', () => {
-    expect(message('@cmd:param some text')).toEqual(
+    expect(parseMessage('@cmd:param some text')).toEqual(
       {
         command: 'cmd',
         arg: 'param',
@@ -11,6 +11,6 @@ describe('message', () => {
   });
 
   it('returns null if strings do not start with @', () => {
-    expect(message('cmd:param some text')).toBeNull();
+    expect(parseMessage('cmd:param some text')).toBeNull();
   });
 });
