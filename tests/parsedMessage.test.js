@@ -1,9 +1,12 @@
+const parseMessage = require('../lib/parsedMessage');
+
 describe('parseMessage', () => {
-  it('returns an object with command, arg, and text', (command, arg, text) => {
+  it('parses the components out of a string', () => {
     
-    expect(parsedMessage('@cmd:param some text')).toEqual({
+    expect(parseMessage('@cmd:param some text')).toEqual({
       command: 'cmd',
       arg: 'param',
       text: 'some text'
     });
   });
+});

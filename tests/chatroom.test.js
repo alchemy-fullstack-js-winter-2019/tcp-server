@@ -13,15 +13,15 @@ describe('ChatRoom', () => {
     chatroom.add(client3);
   });
   
-  it('can add a client', done => {
-    // const client = {}
-    chatroom.add({ username: 'abel' }, (err, createdClient) => {
-      expect(err).toBeFalsy;
-      //expect client.username is defined
-      expect(createdClient).toEqual({ username: 'abel' });
-      done();
-    });
-  });
+  // it('can add a client', done => {
+  //   // const client = {}
+  //   chatroom.add({ username: 'abel' }, (err, createdClient) => {
+  //     expect(err).toBeFalsy;
+  //     //expect client.username is defined
+  //     expect(createdClient).toEqual({ username: 'abel' });
+  //     done();
+  //   });
+  // });
   
   
   it('renames my user', () => {
@@ -34,7 +34,7 @@ describe('ChatRoom', () => {
 
   });
 
-  it('can not rename to existing user name', (username) => {
+  // it('can not rename to existing user name', (username) => {
 
-  });
+  // });
 });
