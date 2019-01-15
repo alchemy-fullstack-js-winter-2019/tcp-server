@@ -1,6 +1,6 @@
 const { createReadStream, createWriteStream }  = require('fs');
 
-const stream = createReadStream('./LAB.md', { encoding: 'utf8'});
+const stream = createReadStream('./LAB.md', { encoding: 'utf8' });
 
 // stream.on('data', data => console.log(data));
 // stream.on('error', err => console.log(err));
@@ -11,7 +11,7 @@ const stream = createReadStream('./LAB.md', { encoding: 'utf8'});
 
 const writeCopy = createWriteStream('./LAB-copy.md');
 stream.on('data', data => {
-    writeCopy.write(data, err => console.log(err));
+  writeCopy.write(data, err => console.log(err));
 });
 
 stream.pipe(writeCopy);
