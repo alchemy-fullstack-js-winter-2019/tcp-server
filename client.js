@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 
 const client = createConnection(7890, () => {
   rl.on('line', (line) => {
-    rl.prompt();
+    rl.prompt('whats up');
     client.write(line);
   });
 });
