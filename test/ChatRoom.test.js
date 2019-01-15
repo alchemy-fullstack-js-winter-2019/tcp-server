@@ -32,7 +32,15 @@ describe('ChatRoom', () => {
     
   });
 
-  
+  it('gets all clients', () => {
+    const chatroom = new ChatRoom();
+    const c1 = chatroom.add({});
+    const c2 = chatroom.add({});
+
+    const allClients = chatroom.all();
+    expect(allClients).toEqual([c1, c2]);
+
+  });
 });
 
 
