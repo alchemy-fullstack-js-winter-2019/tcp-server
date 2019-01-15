@@ -23,12 +23,8 @@ describe('chatroom tests', () => {
 
   it('renames a user', () => {
     const c1 = chatroom.add({});
-
-    
     chatroom.rename(c1.username, 69);
-
     const results = chatroom.getClient(69);
-
 
     expect(chatroom.rename(1, 69)).toBeTruthy();
     expect(chatroom.getClient(69)).toEqual({ username: 69 });
