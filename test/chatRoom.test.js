@@ -22,7 +22,20 @@ describe('database', () => {
     expect(allUsers).toEqual([client1, client2, client3]);
   });
   it('grabs a single user', () => {
-    const oneUser = clients.getUser(client1.username);
+    const oneUser = clients.getClient(client1.username);
     expect(oneUser).toEqual(client1);
+  }); 
+  it('allows you to rename the user', () => {
+    const renamedUser = clients.rename(client2.username, 'Kitten');
+    expect(renamedUser).toEqual({ username: 'Kitten' });
+  });
+  it('will not all you to rename to an already existing username', () => {
+    const client4 = {};
+    clients.add(client4);
+    const client5 = {}; 
+    clients.add(client5);
+    const takenUser = clients.rename(client4.username);
+    expect(takenUser).toBeFalsy();
+
   });
 });
