@@ -16,7 +16,7 @@ describe('chat room experience', () => {
   });
 
   // it('rename returns truthy', () => {
-  //   room.add('user1');
+  //   room.add({ username: 'user1' });
   //   expect(room.rename('user1', 'user2')).toBeTruthy();
   // });
 
@@ -26,7 +26,7 @@ describe('chat room experience', () => {
   });
 
   // it('renames returns new client', () => {
-  //   room.add('user1');
+  //   room.add({ username: 'user1' });
   //   expect(room.rename('user1', 'user2')).toEqual({ username: 'user2' });
   // });
 
@@ -43,8 +43,8 @@ describe('chat room experience', () => {
   });
 
   // it('rename returns original object', () => {
-  //   const user1 = room.add('user1');
-  //   room.add('user2');
+  //   const user1 = room.add({ username: 'user1' });
+  //   room.add({ username: 'user2' });
   //   room.rename('user1', 'user2');
   //   expect(user1.username).toEqual('user1');
   // });
