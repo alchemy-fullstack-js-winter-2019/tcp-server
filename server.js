@@ -1,8 +1,8 @@
-const app = require('./lib/app.js');
+const server = require('./lib/app');
 
-const PORT = 7890;
+const PORT = 4562;
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Server started on ${PORT}`);
 });
 
