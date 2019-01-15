@@ -1,10 +1,20 @@
-const chatroom = require('../lib/chatroom');
+const ChatRoom = require('../lib/chatroom');
 
 describe('ChatRoom', () => {
+  var client1 = {};
+  var client2 = {};
+  var client3 = {};
   let chatroom = null;
+
+  beforeEach(() => {
+    chatroom = new ChatRoom();
+    chatroom.add(client1);
+    chatroom.add(client2);
+    chatroom.add(client3);
+  });
   
   it('can add a client', done => {
-    //const client = {}
+    // const client = {}
     chatroom.add({ username: 'abel' }, (err, createdClient) => {
       expect(err).toBeFalsy;
       //expect client.username is defined
@@ -13,17 +23,8 @@ describe('ChatRoom', () => {
     });
   });
   
-  it('asserts that a name was returned as the username property of the client', (this.client.username, username) => {
-    console.assert.equal(client.username, username);
-    expect(username).toEqual(client.username);
-  });
   
-  it('asserts that the name was assigned as a property to the client object', (client.username, username) => {
-    console.assert.equal(client.username, username);
-    
-  });
-  
-  it('renames my user' () => {
+  it('renames my user', () => {
     const client = {};
     chatroom.add((client));
     const originalName = client.username;
