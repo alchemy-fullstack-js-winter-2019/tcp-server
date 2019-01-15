@@ -7,34 +7,20 @@ const rl = createInterface({
   prompt: '>'
 });
 
-const client = createConnection({ port: 7890 }, () => {
+const client = createConnection(7890, () => {
   console.log('connected to server!');
-  client.write('world!\r\n');
+  rl.prompt();
 
-  rl.on('line', (line) => {
-    console.log(`Received: ${line}`);
+  rl.on('line', input  => {
+    client.write(input);
+    rl.prompt();
   });
 
 });
 
-// use rl to print data from server to console
-
-rl.on('print', (print) => {
-  console.log(`Received: ${print}`);
+client.on('data', data => {
+  rl.write(data);
 });
-
-client.write('hi there!!');
 
 client.pipe(process.stdout);
-
-
-client.on('data', (data) => {
-  console.log(`CLIENT: ${data}`);
-  client.end();
-});
-
-client.on('end', () => {
-  console.log('disconnected from server');
-});
-
 

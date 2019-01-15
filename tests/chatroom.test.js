@@ -38,19 +38,20 @@ describe('ChatRoom', () => {
     
   });
 
-it('can not rename to existing user name', (done) => {
-  const response = clients.rename(client2.username, 'user1');
-  expect(response).toBeFalsy();
-  done();
-});
+  it('can not rename to existing user name', (done) => {
+    const response = clients.rename(client2.username, 'user1');
+    expect(response).toBeFalsy();
+    done();
+  });
 
-it('can get all clients', (done) => {
-  const all = clients.all();
-  const expected = [
-    { username: 'user1' },
-    { username: 'user2' },
-    { username: 'user3' }
-  ];
-  expect(all).toEqual(expected);
-  done();
+  it('can get all clients', (done) => {
+    const all = clients.all();
+    const expected = [
+      { username: 'user1' },
+      { username: 'user2' },
+      { username: 'user3' }
+    ];
+    expect(all).toEqual(expected);
+    done();
+  });
 });
