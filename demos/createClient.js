@@ -7,18 +7,18 @@ const rl = createInterface({
   prompt: '> '
 });
 
-const client = createConnection({ port: 7890 }, () => {
+const client = createConnection({ port: 6001 }, () => {
   console.log('connected to server...');
   rl.prompt();
   rl.on('line', line => {
     rl.prompt();
-    client.write(line, err => err ? err : line);
+    client.write(line);
+  });
+  client.on('data', data => {
+    rl.write(data);
   });
 });
 
-client.on('data', data => {
-  rl.write(`${data}\n`);
-});
 
 // client.on('error', err => console.log(err));
 // client.write('HIIII');
