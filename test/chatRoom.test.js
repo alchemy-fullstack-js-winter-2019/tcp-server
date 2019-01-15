@@ -25,7 +25,7 @@ describe('ChatRoom', () => {
     done();
   });
 
-  it.only('renames a user', done => {
+  it('renames a user', done => {
     const client4 = {};
     chatRoom.add(client4);
     expect(chatRoom.rename(client4.username, 'user-4')).toBeTruthy();
