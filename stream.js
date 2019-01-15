@@ -15,7 +15,7 @@ writeStream.write('hello!!!'), err => console.log(err);
 // const { createReadStream, createWriteStream } = require('fs');
 
 // const stream = createReadStream('./LAB.md', { encoding: 'utf8' });
-const writeStream = createWriteStream('./LAB-copy.md');
+// const writeStream = createWriteStream('./LAB-copy.md');
 
 stream.on('data', data => {
   writeStream.write (data, err => console.log(err));
