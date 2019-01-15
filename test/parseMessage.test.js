@@ -26,4 +26,10 @@ describe('parse message', () => {
     const parsedMessage = parseMessage(message);
     expect(parsedMessage).toEqual({ command: 'dm', arg: 'user-2', text: 'Hello there!' });
   });
+
+  it('sends a message to all users minus the user who sent it', () => {
+    const message = '@all:Hello all';
+    const parsedMessage = parseMessage(message);
+    expect(parsedMessage).toEqual({ command: 'all', arg: '', text: 'Hello all' });
+  });
 });
