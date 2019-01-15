@@ -8,13 +8,14 @@ describe('chatRoom', () => {
     cr = new ChatRoom();
   });
   it('can add a client', () => {
-    const newClient = cr.add(c1);
+    let newClient = cr.add(c1);
     expect(newClient).toBeDefined;
   });
-  // it('gets client by Username', ()=> {
-  //   const client = cr.add(c1);
-  //   const clientId = client.getClient(username, client);
-    
-  // });
+  it('gets client by Username', ()=> {
+    let c1 = cr;
+    let client = cr.add(c1);
+    let user = client.getClient(c1.username);
+    expect(user).toEqual(client); 
+  });
 });
 
