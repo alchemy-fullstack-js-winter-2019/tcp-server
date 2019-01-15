@@ -23,12 +23,20 @@ describe('Chatroom', () => {
   it('renames a user', () => {
     const client = {};
     chatroom.add(client);
-    const rename = chatroom.rename(client.username, 'banana');
-    // expect(chatroom.rename(client.username, 'banana')).toBeTruthy();
-    // expect(chatroom.get('banana')).toBeDefined();
-    // expect(chatroom.get(client.username)).toBeUndefined();
-    expect(rename.username).toEqual('banana');
+    chatroom.rename(client.username, 'banana');
+    expect(chatroom.rename(client.username, 'banana')).toBeTruthy();
+    expect(chatroom.getClient('banana')).toBeDefined();
+    expect(client.username).toEqual('banana');
   });
+
+  // it('returns all clients', () => {
+  //   const client = {};
+  //   const client1 = {};
+  //   chatroom.add(client);
+  //   chatroom.add(client1);
+  //   const allClients = chatroom.all();
+  //   expect(all).toEqual();
+  // });
 
 });
 
