@@ -36,8 +36,8 @@ describe('ChatRoom', () => {
     
   });
 
-  it('cannot rename to existing user name', (done) => {
-    const response = clients.rename(client2.username, 'user1');
+  it('cannot rename to existing user name', done => {
+    const response = clients.rename(client2.username, 'user-1');
     expect(response).toBeFalsy();
     done();
   });
