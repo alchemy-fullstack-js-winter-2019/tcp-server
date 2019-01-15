@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 });
 
 const client = net.connect(7890, () => {
-  
+
   rl.on('line', (content) => {
     rl.prompt('whats up');
     client.write(content);
@@ -20,5 +20,9 @@ const client = net.connect(7890, () => {
     /* eslint-disable-next-line */
     console.log(data);
 
+  });
+  client.on('close', () => {
+    console.log('server has ended');
+    client.destroy();
   });
 });
