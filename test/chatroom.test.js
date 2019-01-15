@@ -23,8 +23,11 @@ describe('Chatroom', () => {
   it('renames a user', () => {
     const client = {};
     chatroom.add(client);
-    const newUser = chatroom.rename(client.username, 'banana');
-    expect(newUser.username).toEqual('banana');
+    const rename = chatroom.rename(client.username, 'banana');
+    // expect(chatroom.rename(client.username, 'banana')).toBeTruthy();
+    // expect(chatroom.get('banana')).toBeDefined();
+    // expect(chatroom.get(client.username)).toBeUndefined();
+    expect(rename.username).toEqual('banana');
   });
 
 });
