@@ -22,5 +22,8 @@
   "homepage": "https://github.com/JeiWolfei/tcp-server#readme",
   "devDependencies": {
     "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "shortid": "^2.2.14"
   }
 }
