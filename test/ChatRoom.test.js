@@ -17,8 +17,20 @@ describe('chatroom tests', () => {
   it('returns the user that is associated with a username', () => {
     const c1 = chatroom.add({});
     const returnedClient = chatroom.getClient(c1.username);
+    console.log(returnedClient);
 
-    expect(returnedClient.username).toEqual(c1.username);
+    expect(returnedClient).toEqual(c1);
+  });
+
+  it('renames a user', () => {
+    
+    
+
+
+    expect(chatroom.rename(1, 69)).toEqual(true);
+    expect(chatroom.getClient(1)).toEqual(undefined);
+    expect(chatroom.getClient(69)).toEqual({ username: 69 });
+    expect(client.username).toEqual(69);
   });
 });
 
