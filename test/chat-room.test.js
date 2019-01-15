@@ -17,6 +17,12 @@ describe('ChatRoom', () => {
       newChat.add(client);
       expect(newChat.getClient(client.username)).toEqual(client);
     });
+
+    it('returns false when no client is found', () => {
+      const newChat = new ChatRoom();
+      const client = {};
+      expect(newChat.getClient(client.username)).toBeFalsy();
+    });
   });
 
   describe('renameClient', () => {
