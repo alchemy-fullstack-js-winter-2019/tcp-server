@@ -13,7 +13,7 @@ describe('ChatRoom', () => {
     });
   });
   
-  it('asserts that a name was returned as the username property of the client', (client.username, username) => {
+  it('asserts that a name was returned as the username property of the client', (this.client.username, username) => {
     console.assert.equal(client.username, username);
     expect(username).toEqual(client.username);
   });
@@ -28,6 +28,14 @@ describe('ChatRoom', () => {
   });
 
   it('can not rename to existing user name', (username) => {
-    
+
   })
+});
+
+describe('parseMessage', () => {
+  it('returns an object with command, arg, and text', (command, arg, text) => {
+    command: 'cmd',
+    arg: 'param',
+    text: 'some text'
+  });
 });
