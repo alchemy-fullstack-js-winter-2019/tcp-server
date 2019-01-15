@@ -1,6 +1,5 @@
 const parseMessage = require('../lib/parseMessage');
 
-// named groups
 describe('parseMessage', () => {
   it.only('returns an object with command, arg, and text', () => {
     expect(parseMessage('@cmd: param some text')).toEqual({

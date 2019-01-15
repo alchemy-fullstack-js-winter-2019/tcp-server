@@ -7,7 +7,6 @@ describe('Chatroom', () => {
   });
 
   it('can add a client', () => {
-    //call the chatroom.add method on a client
     const client = {};
     chatroom.add(client);
     expect(client.username).toBeDefined();
@@ -35,7 +34,6 @@ describe('Chatroom', () => {
     chatroom.add(client);
     chatroom.add(client1);
     const allClients = chatroom.all();
-    console.log(client, client1);
     expect(allClients).toEqual([client, client1]);
   });
 
