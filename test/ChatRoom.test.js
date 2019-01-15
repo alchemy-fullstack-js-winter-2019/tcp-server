@@ -21,6 +21,18 @@ describe('ChatRoom', () => {
     expect(gotClient).toEqual(client);
   });
 
+  it('renames username to newusername', () => {
+    const client = {};
+    const chatroom = new ChatRoom();
+    chatroom.add(client);
+    const origName = client.username;
+    expect(chatroom.rename(client.username, 'Carmen')).toBeTruthy();
+    expect(client.username).toEqual('Carmen');
+    expect(chatroom.getClient(origName)).toBeFalsy();
+    
+  });
+
+  
 });
 
 
