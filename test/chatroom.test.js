@@ -5,12 +5,15 @@ describe('chatRoom', () => {
   let c1 = {};
 
   beforeEach(() => {
-    c1 = {};
     cr = new ChatRoom();
   });
   it('can add a client', () => {
     const newClient = cr.add(c1);
     expect(newClient).toBeDefined;
   });
+  // it('gets client by Username', ()=> {
+  //   const client = add(c1);
+  //   const clientId = client.getClient(username, client);
+  // });
 });
 
