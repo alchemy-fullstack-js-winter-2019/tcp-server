@@ -55,4 +55,16 @@ describe('chat room experience', () => {
 
     expect(room.all()).toEqual([user1, user2]);
   });
+
+  it('parseMessage returns null', () => {
+    expect(room.parseMessage('cmd:param some text')).toEqual(null);
+  });
+
+  it('parseMessage returns null', () => {
+    expect(room.parseMessage('@cmd:param some text')).toEqual({
+      command: 'cmd',
+      arg: 'param',
+      text: 'some text'
+    });
+  });
 });
