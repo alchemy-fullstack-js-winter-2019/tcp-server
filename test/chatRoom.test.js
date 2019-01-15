@@ -14,7 +14,8 @@ describe('Chatroom', () => {
 
   it('can get a client', () => {
     const client = {};
-    chatRoom.get(client);
+    const username = client.username;
+    chatRoom.getClient(username);
     expect(client.username).toBeDefined;
   });
 
