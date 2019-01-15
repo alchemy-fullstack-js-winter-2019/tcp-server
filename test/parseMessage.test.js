@@ -1,7 +1,7 @@
 const parseMessage = require('../lib/parseMessage');
 
 describe('parseMessage', () => {
-  it.only('returns an object with command, arg, and text', () => {
+  it('returns an object with command, arg, and text', () => {
     expect(parseMessage('@cmd: param some text')).toEqual({
       command: 'cmd',
       arg: 'param',
@@ -10,7 +10,7 @@ describe('parseMessage', () => {
   });
 
   it('ignores strings that do not start with @', () => {
-    expect(parseMessage('banana')).toThrowError();
+    expect(parseMessage('banana')).toEqual(null);
   });
 
 });
