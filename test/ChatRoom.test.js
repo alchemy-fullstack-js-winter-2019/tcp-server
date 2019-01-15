@@ -27,15 +27,14 @@ describe('ChatRoom', () => {
   });
 
   it('renames a username to a new name', (done) => {
-    clients.rename(client1, 'Aragorn');
+    clients.rename(client1.username, 'Aragorn');
     expect(client1.username).toEqual('Aragorn');
-    // expect(clients.getClient('user')).toBeFalsy();
+    expect(clients.getClient('user1')).toBeFalsy();
     done();
   });
 
   it('can not rename to existing user name', (done) => {
-    const response = clients.rename(client2, 'user1');
-    console.log('response', response);
+    const response = clients.rename(client2.username, 'user1');
     expect(response).toBeFalsy();
     done();
   });
