@@ -52,5 +52,13 @@ describe('ChatRoom', () => {
     });
   });
 
-
+  describe('all', () => {
+    it('returns all clients in the ChatRoom', () => {
+      const newChat = new ChatRoom();
+      const client = {};
+      const client1 = newChat.add(client);
+      const client2 = newChat.add(client);
+      expect(newChat.all()).toEqual([client1, client2]);
+    });
+  });
 });
