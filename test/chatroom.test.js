@@ -38,7 +38,7 @@ describe ('ChatRoom', () => {
     const clients = ['user0', 'user1', 'user2'] ;  
     chatroom.all(clients);
 
-    expect(chatroom.all(clients)).toEqual(['user0', 'user1', 'user2']);
+    expect(chatroom.all(clients)).toEqual(this.clients.values());
     
   });
    
@@ -46,7 +46,6 @@ describe ('ChatRoom', () => {
 
 });
   
-// it('returns all clients', () => {
 
   
 
