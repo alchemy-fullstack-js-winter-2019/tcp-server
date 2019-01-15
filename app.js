@@ -4,3 +4,11 @@
 // **Subscribe to client socket events
 // **(Remember to call client.setEncoding('utf8'); to work with just text)
 // **Properly orchestrate connected clients.
+
+// const chatRoom = new ChatRoom();
+
+// createServer(7890, client => {
+//   client.on(data, () => {
+
+//   });
+// });
