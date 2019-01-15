@@ -8,6 +8,7 @@ const rl = createInterface({
 });
 
 const client = createConnection(7890, () => {
+  // eslint-disable-next-line no-console
   console.log('connected to server!');
   rl.prompt();
 

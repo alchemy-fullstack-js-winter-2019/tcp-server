@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 const { createServer } = require('./lib/app');
 
-const server = createServer(client => {
-  console.log('CLIENT CONNECTED');
-});
+const PORT = 7890;
 
-server.listen(7890, () => console.log('listening on 7890'));
+createServer.listen(PORT, () => {
+  console.log(`Server started on ${PORT}`);
+});
