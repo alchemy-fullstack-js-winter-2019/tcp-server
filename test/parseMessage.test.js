@@ -10,5 +10,7 @@ describe('message', () => {
       });
   });
 
-  
+  it('returns null if strings do not start with @', () => {
+    expect(message('cmd:param some text')).toBeNull();
+  });
 });
