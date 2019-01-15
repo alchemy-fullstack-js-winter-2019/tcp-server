@@ -1,17 +1,4 @@
-const net = require('net');
-
-const server = net.createServer((client) => {
-  console.log('client connected');
-
-  client.on('data', data => {
-    console.log(`CLIENT: ${data}`);
-  });
-
-  client.on('end', () => {
-    console.log('client disconnected');
-  });
-  
-});
+const server = require('./lib/app');
 
 server.on('error', (err) => {
   throw err;
