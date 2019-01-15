@@ -1,3 +1,5 @@
+/*eslint-disable no-console*/
+
 // desctructure createServer from net using {}
 const { createServer } = require('net');
 

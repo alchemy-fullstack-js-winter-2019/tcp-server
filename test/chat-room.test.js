@@ -1,3 +1,5 @@
+/*eslint-disable no-console*/
+
 const { ChatRoom } = require('../lib/chat-room');
 
 describe('ChatRoom', () => {

@@ -1,3 +1,5 @@
+/*eslint-disable no-console*/
+
 const parseMessage = require('../lib/parseMessage');
 
 describe('parseMessage', () => {
