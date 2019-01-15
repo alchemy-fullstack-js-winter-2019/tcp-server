@@ -31,24 +31,25 @@ describe('ChatRoom', () => {
     it('renames a user', () => {
       const client = {};
       chatroom.add(client);
-      const newName = {};
-      chatroom.rename(client, newName);
-      expect(chatroom.rename()).toBeTruthy();
-      // expect(userName).not.toEqual(newName);
+      expect(chatroom.rename(client.username, 'test')).toBeTruthy();
       // expect that using the new username does return the client
+      expect(client.username === 'test').toEqual(true);
+      expect(client.username === {}).toEqual(false);
       // expect that the client.username is now equal to the new username
+      expect(client.username).toEqual('test');
+      expect(chatroom.getClient(client)).toBeFalsy();
     });
   });
 
-  // describe('all method', () => {
-  //   it('returns an array of all clients', () => {
-  //     const client1 = {};
-  //     const client2 = {};
-  //     chatroom.add(client1);
-  //     chatroom.add(client2);
-  //     // console.log(chatroom.clients);
-  //     expect(chatroom.all()).toEqual(chatroom['clients']);
-  //   });
-  // });
+  describe('all method', () => {
+    it('returns an array of all clients', () => {
+      const client1 = {};
+      const client2 = {};
+      chatroom.add(client1);
+      chatroom.add(client2);
+      // console.log(chatroom.clients);
+      expect(chatroom.all()).toEqual(chatroom['clients']);
+    });
+  });
 
 });
