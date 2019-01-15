@@ -1,4 +1,4 @@
-const { createServer } = require('net');
+const { createServer } = require('./lib/app');
 
 const server = createServer(client => {
   console.log('CLIENT CONNECTED');
