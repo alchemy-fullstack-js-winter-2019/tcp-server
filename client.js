@@ -22,6 +22,7 @@ const client = net.connect(7890, () => {
 
   });
   client.on('close', () => {
+    /* eslint-disable-next-line */
     console.log('server has ended');
     client.destroy();
   });
