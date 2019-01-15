@@ -3,7 +3,7 @@ const parseMessage = require('../lib/parseMessage');
 describe('parse message', () => {
   it('parses message into object', done => {
     const text = '@cmd:param text';
-    const parsedMessage = parseMessage(text)
+    const parsedMessage = parseMessage(text);
     expect(parsedMessage).toEqual({
       command: 'cmd',
       arg: 'param',
