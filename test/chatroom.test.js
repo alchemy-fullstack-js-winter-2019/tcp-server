@@ -18,22 +18,35 @@ describe(' test various chatroom methods', () => {
 
     });
     it('can get a client by value', () => {
-        // const client = {};
         const c1 = chatroom.add({});
         const c2 = chatroom.add({});
         const returnedClient = chatroom.getClient(c1.username);
-        console.log(returnedClient);
 
-        expect(returnedClient.username).toEqual(c1.username);
+        // console.log(returnedClient);
+
+        expect(returnedClient).toEqual(c1);
     });
     it('can rename an username', () => {
         const c1 = chatroom.add({});
+        const OGname = 1;
 
-        const renamedClient = chatroom.rename(c1, 'bob');
+        chatroom.rename(c1.username, 99);
 
-        expect(renamedClient.username).toEqual('bob');
+        expect(chatroom.rename(c1.username, 99)).toBeTruthy();
+        expect(chatroom.getClient(OGname)).toBeFalsy();
+        // expect(chatroom.getClient(69)).toEqual({ username: 69 });
+        expect(c1.username).toEqual(99);
+    });
+    it('can return all the values in the class', () => {
+        const c1 = chatroom.add({});
+        const c2 = chatroom.add({});
 
-    })
+        console.log(chatroom);
+        const allClients = chatroom.all();
+
+        expect(allClients).toEqual([c1, c2]);
+
+    });
 
 
 });
