@@ -19,21 +19,38 @@ describe('ChatRoom', () => {
     expect(client4.username).toEqual('user4');
     expect(client4).toBeDefined();
     done();
-    });
   });
   
+  it('takes a username and returns that object', (done) => {
+    const response = client1.username;
+    expect(response).toEqual(client1);
+    done();
+  });
   
-  it('renames my user', () => {
+  it('renames the user', (done) => {
     const client = {};
-    chatroom.add((client));
+    clients.add((client));
     const originalName = client.username;
-    expect(chatroom.rename(client.username, 'abel')).toBeTruthy();
-    expect(client.username).toEqual('abel');
-    expect (chatroom.getClient(originalName)).toBeFalsy();
-
+    expect(clients.rename(client.username, 'Abel')).toBeTruthy();
+    expect(client1.username).toEqual('Abel');
+    expect (clients.getClient(originalName)).toBeFalsy();
+    done();
+    
   });
 
-  // it('can not rename to existing user name', (username) => {
+it('can not rename to existing user name', (done) => {
+  const response = clients.rename(client2.username, 'user1');
+  expect(response).toBeFalsy();
+  done();
+});
 
-  // });
+it('can get all clients', (done) => {
+  const all = clients.all();
+  const expected = [
+    { username: 'user1' },
+    { username: 'user2' },
+    { username: 'user3' }
+  ];
+  expect(all).toEqual(expected);
+  done();
 });
