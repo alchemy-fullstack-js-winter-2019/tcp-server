@@ -23,24 +23,30 @@ describe('chatroom tests', () => {
 
   it('renames a user', () => {
     const c1 = chatroom.add({});
-    chatroom.rename(c1.username, 69);
-    const results = chatroom.getClient(69);
 
     const originalName = chatroom.getClient(1);
 
-    expect(chatroom.rename(1, 69)).toBeTruthy();
+    expect(chatroom.rename(c1.username, 69)).toBeTruthy();
     expect(chatroom.getClient(originalName)).toBeFalsy();
     expect(chatroom.getClient(69)).toEqual({ username: 69 });
-    expect(results.username).toEqual(69);
   });
 
   it('fails if they try to rename with same username', () => {
     const c1 = chatroom.add({});
     const c2 = chatroom.add({});
-    
 
+    const results = chatroom.rename(c1.username, c2.username);
     
-    expect()
+    expect(results).toBeFalsy();
+  });
+
+  it('returns array of everything in chatroom', () => {
+    const c1 = chatroom.add({});
+    const c2 = chatroom.add({});
+
+    const allClients = chatroom.getAll();
+
+    expect(allClients).toEqual([c1, c2]);
   });
 });
 
