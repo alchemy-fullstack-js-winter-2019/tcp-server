@@ -7,11 +7,11 @@ describe('chat room experience', () => {
   });
 
   it('add', () => {
-    expect(room.add('user1').username).toEqual('user1');
+    expect(room.add({ username: 'user1' }).username).toEqual('user1');
   });
 
   it('getClient', () => {
-    const client = room.add('user1');
+    const client = room.add({ username: 'user1' });
     expect(room.getClient('user1')).toEqual(client);
   });
 
@@ -21,7 +21,7 @@ describe('chat room experience', () => {
   // });
 
   it('rename returns falsy for same username', () => {
-    room.add('user1');
+    room.add({ username: 'user1' });
     expect(room.rename('user1', 'user1')).toBeFalsy();
   });
 
@@ -31,14 +31,14 @@ describe('chat room experience', () => {
   // });
 
   it('renames changes username', () => {
-    const client = room.add('user1');
+    const client = room.add({ username: 'user1' });
     room.rename(client.username, 'user2');
     expect(client.username).toEqual('user2');
   });
 
   it('rename returns falsy for existing username', () => {
-    room.add('user1');
-    room.add('user2');
+    room.add({ username: 'user1' });
+    room.add({ username: 'user2' });
     expect(room.rename('user1', 'user2')).toBeFalsy();
   });
 
@@ -50,8 +50,8 @@ describe('chat room experience', () => {
   // });
 
   it('all returns all clients', () => {
-    const user1 = room.add('user1');
-    const user2 = room.add('user2');
+    const user1 = room.add({ username: 'user1' });
+    const user2 = room.add({ username: 'user2' });
 
     expect(room.all()).toEqual([user1, user2]);
   });
