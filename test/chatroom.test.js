@@ -29,14 +29,15 @@ describe('Chatroom', () => {
     expect(client.username).toEqual('banana');
   });
 
-  // it('returns all clients', () => {
-  //   const client = {};
-  //   const client1 = {};
-  //   chatroom.add(client);
-  //   chatroom.add(client1);
-  //   const allClients = chatroom.all();
-  //   expect(all).toEqual();
-  // });
+  it('returns all clients', () => {
+    const client = {};
+    const client1 = {};
+    chatroom.add(client);
+    chatroom.add(client1);
+    const allClients = chatroom.all();
+    console.log(client, client1);
+    expect(allClients).toEqual([client, client1]);
+  });
 
 });
 
