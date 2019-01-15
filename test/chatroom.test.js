@@ -17,5 +17,13 @@ describe('chatRoom', () => {
     let user = client.getClient(c1.username);
     expect(user).toEqual(client); 
   });
+  it('updates name of user', () => {
+    let c1 = cr;
+    let client = cr.add(c1);
+    let ogName = client.getClient(c1.username);
+    expect(cr.rename(c1.username, 5)).toBeTruthy();
+    expect(cr.getClient(ogName)).toBeFalsy();
+    expect(cr.getClient(c1.username)).toEqual(cr.getClient(c1.username, 5));
+  });
 });
 
