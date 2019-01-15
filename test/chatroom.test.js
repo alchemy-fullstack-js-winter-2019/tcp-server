@@ -26,12 +26,16 @@ describe('ChatRoom', () => {
     expect(foundClient).toEqual({ username: expect.any(String) });
   });
   it('renames a username', () => {
-    
+    const oldName = c1.username;
     const renamedUser = chatroom.rename(c1.username, 'dog');
 
     expect(renamedUser).toEqual(true);
     expect(c1.username).toEqual('dog');
-    
+    expect(chatroom.getClient(oldName)).toBeFalsy();
+  });
+  it('returns all the clients', () => {
 
+    const allClients = chatroom.all();
+    expect(allClients).toEqual([c1, c2, c3]);
   });
 });
