@@ -3,7 +3,7 @@
 **Author**: [Cari Palazzolo](https://github.com/caripizza)
 
 ## Overview
-In this lab...
+In this lab, I implemented a TCP Chat server that allows clients to connect and chat; includes unit tests.
 
 ## Technologies used
 Node.js, JavaScript, [Jest](https://www.npmjs.com/package/jest), [Shortid](https://www.npmjs.com/package/shortid)
