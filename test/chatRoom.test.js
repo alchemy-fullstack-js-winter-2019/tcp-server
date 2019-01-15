@@ -25,18 +25,18 @@ describe('ChatRoom', () => {
     done();
   });
 
-  it('renames a user', done => {
-    const client = {};
-    chatRoom.add(client);
-    expect(chatRoom.rename(client.username, 'user-3')).toBeTruthy();
-    expect(client.username).toEqual('user-3');
+  it.only('renames a user', done => {
+    const client4 = {};
+    chatRoom.add(client4);
+    expect(chatRoom.rename(client4.username, 'user-4')).toBeTruthy();
+    expect(client4.username).toEqual('user-4');
 
     done();
   });
 
   it('returns a list of all clients in map', done => {
     const allClients = chatRoom.all();
-    expect(allClients).toEqual([{ username: 'user-1' }, { username: 'user-2'}]);
+    expect(allClients).toEqual([{ username: 'user-1' }, { username: 'user-2' }]);
     done();
   });
 
