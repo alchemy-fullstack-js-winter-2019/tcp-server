@@ -32,10 +32,8 @@ describe('ChatRoom', () => {
       const client = {};
       chatroom.add(client);
       expect(chatroom.rename(client.username, 'test')).toBeTruthy();
-      // expect that using the new username does return the client
       expect(client.username === 'test').toEqual(true);
       expect(client.username === {}).toEqual(false);
-      // expect that the client.username is now equal to the new username
       expect(client.username).toEqual('test');
       expect(chatroom.getClient(client)).toBeFalsy();
     });
@@ -47,8 +45,7 @@ describe('ChatRoom', () => {
       const client2 = {};
       chatroom.add(client1);
       chatroom.add(client2);
-      // console.log(chatroom.clients);
-      expect(chatroom.all()).toEqual(chatroom['clients']);
+      expect(chatroom.all()).toEqual([client1, client2]);
     });
   });
 
