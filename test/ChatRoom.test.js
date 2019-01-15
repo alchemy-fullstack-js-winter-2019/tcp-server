@@ -38,6 +38,9 @@ describe('ChatRoom', () => {
     const c2 = chatroom.add({});
 
     const allClients = chatroom.all();
+    console.log('allClients', allClients);
+    console.log('c1', c1);
+    console.log('c2', c2);
     expect(allClients).toEqual([c1, c2]);
 
   });
