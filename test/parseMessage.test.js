@@ -8,4 +8,9 @@ describe('parseMessage', () => {
       text: 'some text'
     });
   });  
+
+  it('Ignores strings that do not start with @', () => {
+    const msg = 'How is everyone doing?';
+    expect(parseMessage(msg)).toEqual(null);
+  });
 });
