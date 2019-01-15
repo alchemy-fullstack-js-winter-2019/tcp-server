@@ -6,19 +6,23 @@ describe('ChatRoom', () => {
   const c2 = {};
   const c3 = {};
 
-  let chatRoom = null;
+  let clients = null;
 
   beforeEach(() => {
-    chatRoom = new ChatRoom();
-    chatRoom.add(c1);
-    chatRoom.add(c2);
-    chatRoom.add(c3);
+    clients = new ChatRoom();
+    clients.add(c1);
+    clients.add(c2);
+    clients.add(c3);
   });
 
   it('assigns random user name', () => {
     expect(c1.username).toEqual('user1');
     expect(c2.username).toEqual('user2');
-    console.log('!!!!', c2);
     expect(c3.username).toEqual('user3');
+  });
+
+  it('gets a single client by username', () => {
+    const singleUser = clients.getClient(c2.username);
+    expect(singleUser).toEqual(c2);
   });
 });
