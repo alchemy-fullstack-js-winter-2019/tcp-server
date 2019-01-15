@@ -9,9 +9,9 @@ describe('it can parse a message', () => {
 
         expect(message).toEqual(
             {
-                cmd: '@cmd',
+                cmd: 'cmd',
                 arg: 'param',
-                txt: 'some text'
+                text: 'some text'
             });
     });
 });
