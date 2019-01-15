@@ -6,7 +6,7 @@
 In this lab...
 
 ## Technologies used
-Node.js, JavaScript, [Jest](https://www.npmjs.com/package/jest)
+Node.js, JavaScript, [Jest](https://www.npmjs.com/package/jest), [Shortid](https://www.npmjs.com/package/shortid)
 
 ## Getting Started
 1. Clone and download [GitHub repo](https://github.com/caripizza/tcp-server)
