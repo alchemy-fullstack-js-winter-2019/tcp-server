@@ -19,11 +19,15 @@ describe('ChatRoom', () => {
     const c1 = chatroom.add({});
     const returnedClient = chatroom.getClient(c1.username);
     expect(returnedClient).toEqual(c1);
-    // expect(client.username).toEqual('user');
   });
 
-  it('should fail if username doesn\'t exist', () => {
-
+  it('can rename a user', () => {
+    const client = {};
+    chatroom.add(client);
+    const originalName = client.username;
+    expect(chatroom.rename(client.username, 'sweet99')).toBeTruthy();
+    expect(client.username).toEqual('sweet99');
+    expect(chatroom.getClient(originalName)).toBeFalsy();
   });
 
 });
