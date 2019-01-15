@@ -1,27 +1,26 @@
 const ChatRoom = require('../lib/chatroom');
 
 describe('ChatRoom', () => {
+  let clients = null;
   var client1 = {};
   var client2 = {};
   var client3 = {};
-  let chatroom = null;
 
   beforeEach(() => {
-    chatroom = new ChatRoom();
-    chatroom.add(client1);
-    chatroom.add(client2);
-    chatroom.add(client3);
+    clients = new ChatRoom();
+    clients.add(client1);
+    clients.add(client2);
+    clients.add(client3);
   });
   
-  // it('can add a client', done => {
-  //   // const client = {}
-  //   chatroom.add({ username: 'abel' }, (err, createdClient) => {
-  //     expect(err).toBeFalsy;
-  //     //expect client.username is defined
-  //     expect(createdClient).toEqual({ username: 'abel' });
-  //     done();
-  //   });
-  // });
+  it('can add a client and store it by user name', (done) => {
+    const client4 = {};
+    clients.add(client4);
+    expect(client4.username).toEqual('user4');
+    expect(client4).toBeDefined();
+    done();
+    });
+  });
   
   
   it('renames my user', () => {
