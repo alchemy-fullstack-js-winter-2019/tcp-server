@@ -1,6 +1,9 @@
 const ChatRoom = require('../lib/chatroom');
 
+
 describe ('ChatRoom', () => { 
+  let chatroom = null;
+
   beforeEach(() => {
     chatroom = new ChatRoom();
   });
@@ -14,7 +17,7 @@ describe ('ChatRoom', () => {
 
   it('returns the client with said username', () => {
     const client = {};  
-    const addClient = chatroom.add(client);
+    chatroom.add(client);
     const foundClient = chatroom.getClient(client.username);
    
     expect(foundClient).toEqual(client);
@@ -22,25 +25,28 @@ describe ('ChatRoom', () => {
   
   it('renames the old username to new new username', () => {
     const client = {};  
-    const addClient = chatroom.add(client);
+    chatroom.add(client);
     //get oldName from client  
     const renameUser = chatroom.rename(client.username, 'bob');
     //delete old key:value pair - use delete method
+    expect (chatroom.rename(client.username, 'bob')).toBeTruthy();
+    expect(renameUser).toEqual(true);
+    // expect(client.username).toEqual('bob');
+    expect(chatroom.getClient(client)).toBeFalsy();
+  });
+  it ('gets it all', () => {
+    const clients = [ 'user0', 'user1', 'user2' ] ;  
+    chatroom.all(clients);
 
+    expect(chatroom.all(clients)).toEqual(['user0', 'user1', 'user2']);
     
-    expect(renameUser).toEqual('bob');
-
-    //add a new pair or new client
-    //set clients username to newUsername
-    //someClientUserName = newUsername
-    //expect that the call to .rename returns true
-    //expect that using the old username does not return the client
-    //expect that using the new username does return the client
-    //expect that the client.username is now equal to the new username 
   });
+   
   
-  it('returns all clients', () => {
 
-  });
-  
 });
+  
+// it('returns all clients', () => {
+
+  
+
