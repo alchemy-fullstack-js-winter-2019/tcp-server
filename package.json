@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test:watch": "jest --watch",
     "start": "node server.js",
     "start:client": "node lib/client.js",
-    "lint": "eslint .",
     "pretest": "npm run lint"
   },
   "repository": {
