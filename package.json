@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "pretest": "npm run lint",
     "lint": "eslint .",
-    "test:watch": "jest --watch",
     "test": "jest",
+    "test:watch": "jest --watch",
     "start": "node server.js",
-    "start:client": "node lib/client.js",
-    "pretest": "npm run lint"
+    "start:client": "node lib/client.js"
   },
   "repository": {
     "type": "git",
