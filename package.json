@@ -8,7 +8,8 @@
     "test:watch": "jest --watch",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "start": "npm run test:watch"
+    "start": "node server.js",
+    "start:client": "node client.js"
   },
   "repository": {
     "type": "git",
