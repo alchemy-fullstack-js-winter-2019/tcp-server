@@ -85,6 +85,9 @@ A class that tracks clients (users) in the chat room
     ```js
     return [...this.clients.values()];
     ```
+@all, comd = nic, arg 'hello
+@dm: command - 'username', arg = "hello"
+@nick command = 
 
 ### `parseMessage`
 
