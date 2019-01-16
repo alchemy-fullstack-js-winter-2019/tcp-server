@@ -15,6 +15,6 @@ const client = createConnection({ port: 6001 }, () => {
     client.write(line);
   });
   client.on('data', data => {
-    rl.write(data);
+    rl.write(`${data}\n`);
   });
 });
