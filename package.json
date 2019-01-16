@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "test:watch": "jest --watch",
+    "test": "jest",
     "start": "node server.js",
     "start:client": "node lib/client.js",
     "pretest": "npm run lint"
