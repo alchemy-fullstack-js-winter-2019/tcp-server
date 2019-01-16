@@ -16,7 +16,6 @@ describe('ChatRoom', () => {
     const client3 = {};
     clients.add(client3);
     expect(client3.username).toEqual('user3');
-    
   });
 
   it('takes a username and returns that object', () => {
@@ -40,7 +39,8 @@ describe('ChatRoom', () => {
     const all = clients.all();
     const expected = [
       { username: 'user1' },
-      { username: 'user2' }];
+      { username: 'user2' }
+    ];
     expect(all).toEqual(expected);
   });
 });
