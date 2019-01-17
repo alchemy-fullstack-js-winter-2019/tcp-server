@@ -10,13 +10,13 @@ const rl = readline.createInterface({
 
 const client = createConnection(7890, () => {
   rl.prompt();
-  rl.on('line', (line) => {
-    rl.prompt('whats up');
+  rl.on('line', line => {
     client.write(line);
     rl.prompt();
   });
-  client.setEncoding('utf8');
-  client.on('data', data => {
-    rl.write(`${data}\n`);
-  });
+});
+client.setEncoding('utf8');
+
+client.on('data', data => {
+  rl.write(`${data}\n`);
 });
