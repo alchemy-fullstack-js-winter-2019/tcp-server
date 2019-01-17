@@ -1,7 +1,6 @@
-// const http = require('http');
-// const { createConnection } = require('net'); 
+
 const readline = require('readline');
-const net = require('net'); 
+const { createConnection } = require('net'); 
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,21 +8,15 @@ const rl = readline.createInterface({
   prompt: '> '
 });
 
-const client = net.connect(7890, () => {
-
-  rl.on('line', (content) => {
+const client = createConnection(7890, () => {
+  rl.prompt();
+  rl.on('line', (line) => {
     rl.prompt('whats up');
-    client.write(content);
+    client.write(line);
+    rl.prompt();
   });
-  
+  client.setEncoding('utf8');
   client.on('data', data => {
-    /* eslint-disable-next-line */
-    console.log(data);
-
-  });
-  client.on('close', () => {
-    /* eslint-disable-next-line */
-    console.log('server has ended');
-    client.destroy();
+    rl.write(`${data}\n`);
   });
 });
