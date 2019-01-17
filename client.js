@@ -1,7 +1,7 @@
 const { createConnection } = require('net');
-const { createInterface } = require('readline');
+const readline = require('readline');
 
-const rl = createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
   prompt: '> '
@@ -10,16 +10,13 @@ const rl = createInterface({
 const client = createConnection(7890, () => {
   console.log('CONNECTED TO SERVER');
   rl.prompt();
-
-  // listen to line events and write data to server
   rl.on('line', line => {
-    rl.prompt();
-    // write data to the server
     client.write(line);
+    rl.prompt();
   });
 });
 
-// use rl to print data from server to console
+client.setEncoding('utf8');
 client.on('data', data => {
-  rl.write(data);
+  rl.write(`${data}\n`);
 });
