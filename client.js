@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { createConnection } = require('net');
 const { createInterface } = require('readline');
 
@@ -8,7 +9,15 @@ const rl = createInterface({
 });
 
 const client = createConnection({ port: 6001 }, () => {
-  console.log('connected to server...');
+  console.log(`
+    🍕  Welcome to the ChatRoom! 🍕
+
+    Available commands:
+      @all (message)
+      @dm:username (message)
+      @nick:newusername
+  `);
+
   rl.prompt();
   rl.on('line', line => {
     rl.prompt();

@@ -1,4 +1,15 @@
+/* eslint-disable no-console */
 const app = require('./lib/app');
 
-// eslint-disable-next-line no-console
-app.listen(6001, () => console.log('Server Listening on 6001...'));
+app.listen(6001, () => {
+  console.log(`
+    Server started on port 6001...
+
+      _/_/_/  _/  _/    _/_/  _/_/_/
+    _/    _/  _/  _/   _/ _/    _/
+    _/        _/_/_/  _/  _/    _/
+    _/        _/  _/  _/_/_/    _/
+    _/    _/  _/  _/ _/   _/    _/
+     _/_/_/   _/  _/_/    _/    _/
+  `);
+});
