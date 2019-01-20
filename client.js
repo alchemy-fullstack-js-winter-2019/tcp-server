@@ -8,6 +8,7 @@ const rl = readline.createInterface({
 });
 
 const client = createConnection(7890, () => {
+  /* eslint-disable-next-line */
   console.log('CONNECTED TO SERVER');
   rl.prompt();
   rl.on('line', line => {

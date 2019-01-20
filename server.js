@@ -1,15 +1,14 @@
-// const { createServer } = require('net');
+const { createServer } = require('net');
 
-// const server = createServer(client => {
-//   console.log('CLIENT CONNECTED');
-//   client.on('data', data => {
-//     console.log(`CLIENT: ${data}`);
-//   });
+const server = createServer(client => {
+  /* eslint-disable-next-line */
+  console.log('CLIENT CONNECTED');
+  client.on('data', data => {
+    /* eslint-disable-next-line */
+    console.log(`CLIENT: ${data}`);
+  });
 
-// });
+});
 
-// server.listen(7890, () => console.log('LISTENING ON 7890'));
-
-const app = require('./lib/app');
-
-app().listen(7890, () => console.log('hi there'));
+/* eslint-disable-next-line */
+server.listen(7890, () => console.log('LISTENING ON 7890'));
