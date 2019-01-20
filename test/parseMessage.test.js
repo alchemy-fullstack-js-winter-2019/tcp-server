@@ -29,4 +29,12 @@ describe('parseMessage', () => {
     });
   });
 
+  it('parses the components out of a @nick message string', () => {
+    expect(parseMessage('@nick:booboo')).toEqual({
+      command: 'nick',
+      arg: 'booboo',
+      text: ''
+    });
+  });
+
 });
