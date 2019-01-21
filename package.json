@@ -6,16 +6,15 @@
   "directories": {
     "lib": "lib",
     "test": "jest",
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "start": "node server.js",
-    "start:client": "node client.js"
+    "pretest": "npm run lint"
+
   },
   "scripts": {
     "test": "jest",
     "start": "node server.js",
     "test:watch": "jest --watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start:client": "node client.js"
   },
   "repository": {
     "type": "git",
