@@ -7,7 +7,6 @@
     "lib": "lib",
     "test": "jest",
     "pretest": "npm run lint"
-
   },
   "scripts": {
     "test": "jest",
