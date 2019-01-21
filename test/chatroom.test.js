@@ -1,8 +1,5 @@
 const Chatroom = require('../lib/chatroom');
 
-
-
-
 describe(' test various chatroom methods', () => {
     let chatroom = null;
     beforeEach(() => {
