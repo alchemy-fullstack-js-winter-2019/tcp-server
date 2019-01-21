@@ -9,7 +9,7 @@ const rl = createInterface({
 
 const client = createConnection(7890, () => { 
   rl.prompt();
-  console.log('connected to server!');
+  // console.log('connected to server!');
   rl.on('line', line => { //listen to readline interface
     client.write(line);
     rl.prompt();
