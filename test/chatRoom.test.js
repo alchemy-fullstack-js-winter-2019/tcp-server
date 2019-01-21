@@ -24,9 +24,6 @@ describe('Chat room', () => {
     const client = {};
     chatRoom.add(client);
     expect(chatRoom.rename(client.username, 'ryan')).toBeTruthy();
-  
-    //expect(client.username).toEqual('ryan')
-    //expect(chatRoom.getClient(originalName)).toBeFalsey();
 
   });
 });
