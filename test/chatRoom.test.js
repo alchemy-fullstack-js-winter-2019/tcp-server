@@ -5,8 +5,7 @@ describe('Chat room', () => {
   beforeEach(() => {
     chatRoom = new ChatRoom();
   });
-  it('can add a client', () => { //add this method to our list of clients
-    //const client
+  it('can add a client', () => { 
     const client = {};
     chatRoom.add(client);
     expect(client.username).toBeDefined();
