@@ -5,20 +5,13 @@ describe('message parse', () => {
     expect(parseMessage('does not start w@')).toEqual(null);
   });
 });
-it('returns an object', () => {
-  expect('@cmd: param some text').toEqual({
-    command: 'cmd',
-    arg:'param',
-    text: 'param text'
-  });
-});
-
-//   it('parse the compoenents out of a string', () => {
-//     expect(parseMessage('@cmd:param some text') => {
-//       command: 'cmd',
-//       arg: 'param',
-//       text: 'param text'
-
-//     })
-//   })
+// To DO
+// it('returns an object', () => {
+//   expect({ command: 'cmd', text: 'param text' }).toContain({
+//     command: 'cmd',
+//     arg:'param',
+//     text: 'param text'
+//   });
 // });
+
+
