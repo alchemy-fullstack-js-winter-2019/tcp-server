@@ -30,11 +30,11 @@ describe('ChatRoom', () => {
     expect(chatroom.getClient(origName)).toBeFalsy();
   });
 
-  // it('cannot rename to existing username', () => {
-  //   const client = {};
-  //   chatroom.add(client);
-  //   expect(chatroom.rename(client.username, 'user0')).toBeFalsy();
-  // });
+  it('cannot rename to existing username', () => {
+    const client = {};
+    chatroom.add(client);
+    expect(chatroom.rename(client.username, 'user0')).toBeFalsy();
+  });
 
   it('gets all clients', () => {
     const chatroom = new ChatRoom();

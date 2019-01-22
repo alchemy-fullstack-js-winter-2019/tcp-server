@@ -22,7 +22,7 @@ const client = createConnection({ port:7890 }, () => {
 
 // use rl to print data from server to console
 client.on('data', data => {
-  rl.write(data);
+  rl.write(`${data}\n`);
 });
 
 // client.write ('Hi there');
