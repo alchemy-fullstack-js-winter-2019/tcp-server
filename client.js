@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { createConnection } = require('net');
 const { createInterface } = require('readline');
 
@@ -8,20 +9,21 @@ const rl = createInterface({
 });
 
 const client = createConnection({ port: 6001 }, () => {
-  console.log('connected to server...');
+  console.log(`
+    🍕  Welcome to the ChatRoom! 🍕
+
+    Available commands:
+      @all (message)
+      @dm:username (message)
+      @nick:newusername
+  `);
+
   rl.prompt();
   rl.on('line', line => {
     rl.prompt();
     client.write(line);
   });
   client.on('data', data => {
-    rl.write(data);
+    rl.write(`${data}\n`);
   });
 });
-
-
-// client.on('error', err => console.log(err));
-// client.write('HIIII');
-// client.pipe(process.stdout); 
-
-
