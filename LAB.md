@@ -131,4 +131,5 @@ with the port number
 * Manage clients (`ChatRoom`) and tests **3pts**
 * Parse Messages (`parseMessage`) and tests **3pts**
 * Server App and Listen (`app.js` and `server.js`) **3pts**
+
 * Project Organization and Clean Code **1pts**
