@@ -1,0 +1,30 @@
+
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stream.js",
+  "scripts": {
+    "test:watch": "jest --watch",
+    "test": "jest",
+    "start": "nodemon server.js",
+    "start:client": "node client.js",
+    "pretest": "npm run lint",
+    "lint": "eslint ." 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avanvalk/tcp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avanvalk/tcp-server/issues"
+  },
+  "homepage": "https://github.com/avanvalk/tcp-server#readme",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "jest": "^23.6.0"
+  }
+}
