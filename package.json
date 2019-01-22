@@ -6,7 +6,8 @@
   "main": "stream.js",
   "scripts": {
     "test:watch": "jest --watch",
-    "start": "node server.js",
+    "test": "jest",
+    "start": "nodemon server.js",
     "start:client": "node client.js"
   },
   "repository": {

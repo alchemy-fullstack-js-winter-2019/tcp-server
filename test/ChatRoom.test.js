@@ -24,7 +24,6 @@ describe('ChatRoom', () => {
   it('returns the user based on username', () => {
     client1 = chatroom.add({});
     const returnedClient = chatroom.getClient(client1.username);
-
     expect(returnedClient).toEqual(client1);
   });
 
@@ -35,21 +34,20 @@ describe('ChatRoom', () => {
     expect(chatroom.rename(client.username, 'username')).toBeTruthy(); 
     expect(client.username).toEqual('username4');
     expect(chatroom.getClient(OriginalName)).toBeFalsy();
-
   });
+
   it('can not rename to existing user name', () => {
     const chatroom = new ChatRoom();
     client1 = chatroom.add({});
     client2 = chatroom.add({});
-
     chatroom.rename(client1.username, client2.username);
     expect(client1.username).not.toEqual(client2.username);
   });
+  
   it('returns an array of all clients', () => {
     const chatroom = new ChatRoom();
     client1 = chatroom.add({});
     client2 = chatroom.add({});
-
     const allClients = chatroom.all();
     expect(allClients).toEqual([client1, client2]);
   });
