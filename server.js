@@ -1,11 +1,5 @@
-const { createServer } = require('net');
+const server = require('./lib/app');
 
-const server = createServer(client => {
-  console.log('CLIENT CONNECTED');
-  
-  client.on('data', (data) => {
-    console.log(`CLIENT: ${data}`);
-  });
-});
+const PORT = 7890;
 
-server.listen(7890, () => console.log('LISTENING ON 7890'));
+server.listen(PORT, () => console.log('LISTENING ON 7890'));
