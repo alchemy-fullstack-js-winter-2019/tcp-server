@@ -8,7 +8,9 @@
     "test:watch": "jest --watch",
     "test": "jest",
     "start": "nodemon server.js",
-    "start:client": "node client.js"
+    "start:client": "node client.js",
+    "pretest": "npm run lint",
+    "lint": "eslint ." 
   },
   "repository": {
     "type": "git",
