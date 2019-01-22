@@ -1,0 +1,36 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "directories": {
+    "lib": "lib",
+    "test": "jest",
+    "pretest": "npm run lint"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "test:watch": "jest --watch",
+    "lint": "eslint .",
+    "start:client": "node client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crperezchica/tcp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crperezchica/tcp-server/issues"
+  },
+  "homepage": "https://github.com/crperezchica/tcp-server#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "shortid": "^2.2.14"
+  }
+}
