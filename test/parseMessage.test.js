@@ -24,13 +24,13 @@ describe('parseMessage', () => {
   });
 
   it('is functional with the nick command', () => {
-    const message = '@nick:rachel';
+    const message = '@nick:jj';
     const response = parseMessage(message);
-    expect(response).toEqual({ command: 'nick', arg: 'rachel', text: '' });
+    expect(response).toEqual({ command: 'nick', arg: 'jj', text: '' });
   });
 
   it('is functional with the all command', () => {
-    const message = '@all hey yo';
+    const message = '@all howdy';
     const response = parseMessage(message);
-    expect(response).toEqual({ command: 'all', arg: '', text: 'hey yo' });
+    expect(response).toEqual({ command: 'all', arg: '', text: 'hi' });
   });

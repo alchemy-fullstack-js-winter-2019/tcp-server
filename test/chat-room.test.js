@@ -20,4 +20,6 @@ describe('Chatroom', () => {
     expect(client.username).toEqual('jei');
     expect(chatRoom.getClient(oldName)).toBeFalsy();
   });
+
+  it('cannot rename')
 });
