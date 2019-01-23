@@ -5,13 +5,13 @@ describe('message parse', () => {
     expect(parseMessage('does not start w@')).toEqual(null);
   });
 });
-// To DO
-// it('returns an object', () => {
-//   expect({ command: 'cmd', text: 'param text' }).toContain({
-//     command: 'cmd',
-//     arg:'param',
-//     text: 'param text'
-//   });
-// });
+
+it('returns an object', () => {
+  expect(parseMessage('@cmd:param some text')).toEqual({
+    command: 'cmd',
+    args:'param',
+    text: 'some text'
+  });
+});
 
 

@@ -6,7 +6,8 @@
   "directories": {
     "lib": "lib",
     "test": "jest",
-    "pretest": "npm run lint"
+    "pretest": "npm run lint",
+    "lint": "eslint ."
   },
   "scripts": {
     "test": "jest",
