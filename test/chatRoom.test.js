@@ -6,16 +6,20 @@ describe('Chat room', () => {
   beforeEach(() => {
     chatRoom = new ChatRoom();
   });
+
   it('can add a client', () => { 
     const client = {};
     chatRoom.add(client);
     expect(client.username).toBeDefined();
   });
-  // it('gets a user', () => {
-  //   const client = {};
-  //   chatRoom.add(client);
-  //   expect(chatRoom.getClient(client.username)).toContain(client);
-  // });
+
+  it('gets a user', () => {
+    
+    const client = {};
+    chatRoom.add(client);
+    expect(chatRoom.get(client.username)).toEqual(client);
+  });
+
   it('renames my user', () => {
     const client = {};
     chatRoom.add(client);
