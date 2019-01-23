@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/JeiWolfei/tcp-server#readme",
   "devDependencies": {
+    "eslint": "^5.12.1",
     "jest": "^23.6.0"
   },
   "dependencies": {
