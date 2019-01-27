@@ -15,10 +15,9 @@
     "jest": "^23.6.0"
   },
   "scripts": {
-    "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint .",
-    "pretest": "npm run lint"
+    "start:client": "node client.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
