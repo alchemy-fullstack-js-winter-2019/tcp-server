@@ -3,9 +3,15 @@ const ChatRoom = require('../lib/chatroom');
 
 describe ('ChatRoom', () => { 
   let chatroom = null;
+  let client = null;
 
   beforeEach(() => {
     chatroom = new ChatRoom();
+  });
+
+  beforeEach(() => {
+    client = { client: 1 };
+    chatroom.add(client);
   });
 
   it('adds a client ', () => {
