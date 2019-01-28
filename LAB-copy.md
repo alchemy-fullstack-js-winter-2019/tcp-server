@@ -63,23 +63,23 @@ A class that tracks clients (users) in the chat room
 1. Test that a ChatRoom instance 'takes a socket, assigns random user name, and stores by user name'. Do this by
     * creating a new ChatRoom
     * call `.add(client)` (note you can pass in a "mock", a plain empty object. Doesn't have to be a socket instance)
-    * expect that a name was returned as the username property of the client object (e.g. `expect(client.username).toEqual(username);`)
-    * expect that the name was assigned as a property to the client object
-    * call `.getClient(username)` passing in the username returned from the `.add` call, and
-        expect that the returned object is the same as what you supplied to the `.add` call.
+    * assert that a name was returned as the username property of the client object (e.g. `assert.equal(client.username, username);`)
+    * assert that the name was assigned as a property to the client object
+    * call `.getClient(username)` passing in the username returned from the `.add` call, and assert that the
+    returned object is the same as what you supplied to the `.add` call.
 2. Test that a ChatRoom instance 'renames a user'
     * Create a new ChatRoom and add a user as above
     * Call `.rename(username, newusername)`
-    * expect that the call to `.rename` returns `true`
-    * expect that using the old username does not return the client
-    * expect that using the new username **does** return the client
-    * expect that the `client.username` is now equal to the new username (This means the property on the client object
+    * assert that the call to `.rename` returns `true`
+    * assert that using the old username does not return the client
+    * assert that using the new username **does** return the client
+    * assert that the `client.username` is now equal to the new username (This means the property on the client object
     needs to change _as well as_ the key in the map.
 3. Add a Test 'can not rename to existing user name'. Should not throw an error, just do not do the requested operation
     * Create a new ChatRoom and add two users
     * Call `.rename(username1, username2)`
-    * expect that return value from `.rename` is `false`
-    * expect that username1 and username2 return their original client objects
+    * assert that return value from `.rename` is `false`
+    * assert that username1 and username2 return their original client objects
 4. Test that calling `.all()` on the chat room returns an array of all clients
     * Hint: Use the following to get all values from a map (example assumes map is stored as `this.clients`):
     ```js
@@ -131,3 +131,5 @@ with the port number
 * Manage clients (`ChatRoom`) and tests **3pts**
 * Parse Messages (`parseMessage`) and tests **3pts**
 * Server App and Listen (`app.js` and `server.js`) **3pts**
+* Project Organization and Clean Code **1pts**
+
