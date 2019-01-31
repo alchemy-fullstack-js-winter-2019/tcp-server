@@ -1,70 +1,55 @@
-const ChatRoom = require('../lib/chatroom');
+const ChatRoom = require('../lib/ChatRoom');
 
-
-describe ('ChatRoom', () => { 
-  let chatroom = null;
-  let clients = null;
-
-  beforeEach(() => {
-    chatroom = new ChatRoom();
-  });
+describe('ChatRoom', () => {
+  let chatRoom;
+  let client;
 
   beforeEach(() => {
-    clients = { client: 1 };
-    chatroom.add(clients);
+    chatRoom = new ChatRoom();
   });
 
-  it('adds a client ', () => {
-    const clients = {}; 
-    chatroom.add(clients);
-    
-    expect(clients.username).toBeDefined();
+  beforeEach(() => {
+    client = { client: 1 };
+    chatRoom.add(client);
   });
 
-  it('returns the client with said username', () => {
-    const clients = {};  
-    chatroom.add(clients);
-    const foundClient = chatroom.getClient(clients.username);
-   
-    expect(foundClient).toEqual(clients);
+  it('adds a client', () => {
+    expect(client).toEqual({
+      ...client,
+      username: expect.any(String)
+    });
   });
-  
-  it('renames the old username to new new username', () => {
-    const clients = {};  
-    chatroom.add(clients);
-    //get oldName from client  
-    const renameUser = chatroom.rename(clients.username, 'bob');
-    //delete old key:value pair - use delete method
-    expect (chatroom.rename(clients.username, 'bob')).toBeTruthy();
-    expect(renameUser).toEqual(true);
-    // expect(client.username).toEqual('bob');
-    expect(chatroom.getClient(clients)).toBeFalsy();
+
+  it('gets a client by username', () => {
+    expect(chatRoom.getClient(client.username)).toBe(client);
+  });
+
+  it('renames a client', () => {
+    const originalUsername = client.username;
+    chatRoom.rename(client.username, 'renamedUser');
+    expect(client.username).toEqual('renamedUser');
+
+    expect(chatRoom.getClient('renamedUser')).toEqual(client);
+    expect(chatRoom.getClient(originalUsername)).toBeUndefined();
   });
 
   it('cannot rename to an existing username', () => {
     const client1 = {};
     const client2 = {};
-    chatroom.add(client1);
-    chatroom.add(client2);
+    chatRoom.add(client1);
+    chatRoom.add(client2);
 
-    chatroom.rename(client1.username, client2.username);
+    chatRoom.rename(client1.username, client2.username);
 
     expect(client1.username).not.toEqual(client2.username);
   });
 
   it('gets a list of all clients', () => {
-    Array.from(Array(5)).forEach(() => chatroom.add({}));
+    Array.from(Array(5)).forEach(() => chatRoom.add({}));
 
-    const all = chatroom.all();
-    // expect(all).toHaveLength(6);
-    expect(all).toContain(clients);
+    const all = chatRoom.all();
+    expect(all).toHaveLength(6);
+    expect(all).toContain(client);
 
   });
 });
-  
-
-
-  
-
-  
-
