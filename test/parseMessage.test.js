@@ -13,9 +13,10 @@ describe('parseMessage', () => {
     });
   });
   
-  it('can change the username', () => {
-    const message = '@Doobly:Mobly';
+  it('can change the username @nick short for nickname', () => {
+    const message = '@nick:Mobly';
     const parsedMessage = parseMessage(message);
-    expect(parsedMessage).toEqual({ command: 'Doobly', arg: 'Mobly' });
+    expect(parsedMessage).toEqual({ command: 'nick', arg: 'Mobly' });
   });
+  
 });
