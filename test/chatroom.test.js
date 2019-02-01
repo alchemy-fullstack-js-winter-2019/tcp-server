@@ -1,55 +1,63 @@
-const ChatRoom = require('../lib/ChatRoom');
+const ChatRoom = require('../lib/chatroom');
 
-describe('ChatRoom', () => {
-  let chatRoom;
-  let client;
+
+describe ('ChatRoom', () => { 
+  let chatroom;
+  let clients;
 
   beforeEach(() => {
-    chatRoom = new ChatRoom();
+    chatroom = new ChatRoom();
   });
 
   beforeEach(() => {
-    client = { client: 1 };
-    chatRoom.add(client);
+    clients = { client: 1 };
+    chatroom.add(clients);
   });
 
   it('adds a client', () => {
-    expect(client).toEqual({
-      ...client,
+    expect(clients).toEqual({
+      ...clients,
       username: expect.any(String)
     });
   });
 
   it('gets a client by username', () => {
-    expect(chatRoom.getClient(client.username)).toBe(client);
+    expect(chatroom.getClient(clients.username)).toBe(clients);
   });
 
   it('renames a client', () => {
-    const originalUsername = client.username;
-    chatRoom.rename(client.username, 'renamedUser');
-    expect(client.username).toEqual('renamedUser');
+    const originalUsername = clients.username;
+    chatroom.rename(clients.username, 'renamedUser');
+    expect(clients.username).toEqual('renamedUser');
 
-    expect(chatRoom.getClient('renamedUser')).toEqual(client);
-    expect(chatRoom.getClient(originalUsername)).toBeUndefined();
+    expect(chatroom.getClient('renamedUser')).toEqual(clients);
+    expect(chatroom.getClient(originalUsername)).toBeUndefined();
   });
 
   it('cannot rename to an existing username', () => {
     const client1 = {};
     const client2 = {};
-    chatRoom.add(client1);
-    chatRoom.add(client2);
+    chatroom.add(client1);
+    chatroom.add(client2);
 
-    chatRoom.rename(client1.username, client2.username);
+    chatroom.rename(client1.username, client2.username);
 
     expect(client1.username).not.toEqual(client2.username);
   });
 
   it('gets a list of all clients', () => {
-    Array.from(Array(5)).forEach(() => chatRoom.add({}));
+    Array.from(Array(5)).forEach(() => chatroom.add({}));
 
-    const all = chatRoom.all();
+    const all = chatroom.all();
     expect(all).toHaveLength(6);
-    expect(all).toContain(client);
+    expect(all).toContain(clients);
 
   });
 });
+  
+
+
+  
+
+  
+

@@ -15,11 +15,13 @@
     "jest": "^23.6.0"
   },
   "scripts": {
+    "test": "jest",
     "test:watch": "jest --watch",
-    "start:client": "node client.js",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "lint": "eslint .",
+    "pretest": "npm run lint"
   },
-  "repository": {
+    "repository": {
     "type": "git",
     "url": "git+https://github.com/pickuppatterns/tcp-server.git"
   },
