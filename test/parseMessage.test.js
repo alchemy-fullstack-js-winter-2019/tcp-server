@@ -12,4 +12,10 @@ describe('parseMessage', () => {
       text: 'some text'
     });
   });
+  
+  it('can change the username', () => {
+    const message = '@Doobly:Mobly';
+    const parsedMessage = parseMessage(message);
+    expect(parsedMessage).toEqual({ command: 'Doobly', arg: 'Mobly' });
+  });
 });
