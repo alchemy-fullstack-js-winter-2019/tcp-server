@@ -132,3 +132,4 @@ with the port number
 * Parse Messages (`parseMessage`) and tests **3pts**
 * Server App and Listen (`app.js` and `server.js`) **3pts**
 * Project Organization and Clean Code **1pts**
+* Project Organization and Clean Code **1pts**
